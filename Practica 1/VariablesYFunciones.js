@@ -10,3 +10,7 @@ console.log(saludo);
 // Ejercicio 2
 const cuadrado = (numero) => {return(numero * numero);}
 console.log("Resultado de la multiplicación: "+cuadrado(10));
+
+// Ejercicio 3
+const saludoPersonalizado =(nombre,edad) => {return("Hola, me llamo " + nombre + " y tengo "+ edad + " años.")}
+console.log(saludoPersonalizado("Estrella", 20));
