@@ -8,4 +8,7 @@ const productos =[
 ]
 
 const precios = productos.filter(productos => productos.precio > 1000)
-console.log(precios);
+//console.log(precios);
+
+const nombres = precios.map(productos => productos.nombre)
+console.log(nombres);
