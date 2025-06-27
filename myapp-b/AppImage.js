@@ -8,6 +8,19 @@ import {
 } from "react-native";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(()=>{
+    setTimeout (()=> setLoading(false), 6000);
+  }, []);
+
+  if (loading){
+      return(
+        <View style={styles.splash}>
+          <Text style= {styles.splashText}> Cargando ...</Text>
+          <ActivityIndicator size='large' color='#ffffff'/>
+        </View>
+      );
+  }
   return (
     <ImageBackground
       source={{
@@ -24,6 +37,17 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  splash:{
+    flex:1,
+    backgroundColor:'#2c3e50',
+    alignItems: 'center',
+    justifyContent:'center',
+  },
+  splashText:{
+    color: 'white',
+    fontSize: 28,
+    marginBottom: 20
+  },
   background: {
     flex: 1,
     justifyContent: "center",
@@ -38,4 +62,5 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 24,
   },
+
 });
